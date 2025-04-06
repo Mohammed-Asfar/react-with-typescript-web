@@ -3,6 +3,7 @@ import "./App.css";
 import InputField from "./components/InputField";
 
 interface Task {
+  id: number;
   title: string;
   isFinished: boolean;
 }
@@ -12,7 +13,17 @@ function App() {
   const [taskList, setTask] = useState<Task[]>([]);
 
   function handleOnClick() {
-    setTask([...taskList, { title: taskTitle, isFinished: false }]);
+    if (taskTitle != "") {
+      setTask([
+        ...taskList,
+        { id: taskList.length, title: taskTitle, isFinished: false },
+      ]);
+    }
+  }
+
+  function handleDelete(id: number) {
+    const newTaskList = taskList.filter((task) => task.id != id);
+    setTask(newTaskList);
   }
 
   function handleOnChange(value: string) {
@@ -29,9 +40,13 @@ function App() {
         {taskList.map((task) => (
           <div className="taskCard">
             <div className="avatar">
-              <h5>{task.title[0]}</h5>
+              <h5>{task.title[0].toUpperCase()}</h5>
             </div>
             <p>{task.title}</p>
+            <button className="deleteBtn" onClick={() => handleDelete(task.id)}>
+              {" "}
+              delete
+            </button>
           </div>
         ))}
       </div>

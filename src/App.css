@@ -8,8 +8,8 @@ p {
 }
 
 .taskInputField {
-  background-color: antiquewhite;
-  border: solid gray;
+  background-color: #242424;
+  border: 1px solid gray;
   border-radius: 10px;
   padding: 10px;
   width: 80%;
@@ -26,6 +26,7 @@ p {
 }
 
 .addBtn {
+  height: 40px;
   margin-left: 10px;
   width: 100px;
   background-color: teal;
@@ -35,6 +36,7 @@ p {
 
 .addBtn:hover {
   cursor: pointer;
+  background-color: rgb(4, 184, 184);
 }
 
 .column {
@@ -60,4 +62,18 @@ p {
   background-color: teal;
   width: 40px;
   height: 40px;
+}
+
+.deleteBtn {
+  height: 40px;
+  margin-left: 50px;
+  width: 100px;
+  background-color: red;
+  border-style: none;
+  border-radius: 10px;
+}
+
+.deleteBtn:hover {
+  cursor: pointer;
+  background-color: rgb(184, 4, 4);
 }

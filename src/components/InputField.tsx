@@ -1,11 +1,11 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 
 interface InputFieldProps {
   onChange: (value: string) => void;
   onClick: () => void;
 }
 
-const InputField: React.FC<{ props: InputFieldProps }> = ({ props }) => {
+const InputField = ({ props }: { props: InputFieldProps }) => {
   const { onChange, onClick } = props;
   const inputRef = useRef<HTMLInputElement>(null);
 
