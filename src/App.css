@@ -3,7 +3,12 @@
   text-align: center;
 }
 
+p {
+  margin: 0px;
+}
+
 .taskInputField {
+  background-color: antiquewhite;
   border: solid gray;
   border-radius: 10px;
   padding: 10px;
@@ -34,5 +39,25 @@
 
 .column {
   display: flex;
+  flex-direction: column;
+}
+
+.taskCard {
+  margin-top: 10px;
+  font-size: 18px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 80%;
+}
+
+.avatar {
+  display: flex;
   justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  border-radius: 100px;
+  background-color: teal;
+  width: 40px;
+  height: 40px;
 }

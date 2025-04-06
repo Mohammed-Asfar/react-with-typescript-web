@@ -1,21 +1,40 @@
+import { useState } from "react";
 import "./App.css";
 import InputField from "./components/InputField";
 
+interface Task {
+  title: string;
+  isFinished: boolean;
+}
+
 function App() {
-  let taskList = [
-    { title: "I want to learn Python", isFinished: false },
-    { title: "I want to learn react", isFinished: false },
-  ];
+  let taskTitle: string = "";
+  const [taskList, setTask] = useState<Task[]>([]);
+
+  function handleOnClick() {
+    setTask([...taskList, { title: taskTitle, isFinished: false }]);
+  }
+
+  function handleOnChange(value: string) {
+    taskTitle = value;
+  }
 
   return (
     <>
       <h1 className="heading">Taskify</h1>
-      <InputField></InputField>
-      <ul className="column">
+      <InputField
+        props={{ onChange: handleOnChange, onClick: handleOnClick }}
+      ></InputField>
+      <div className="column">
         {taskList.map((task) => (
-          <div className="taskCard">{task.title}</div>
+          <div className="taskCard">
+            <div className="avatar">
+              <h5>{task.title[0]}</h5>
+            </div>
+            <p>{task.title}</p>
+          </div>
         ))}
-      </ul>
+      </div>
     </>
   );
 }
