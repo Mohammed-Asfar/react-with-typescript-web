@@ -1,0 +1,38 @@
+.heading {
+  font-size: 40px;
+  text-align: center;
+}
+
+.taskInputField {
+  border: solid gray;
+  border-radius: 10px;
+  padding: 10px;
+  width: 80%;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.taskInputField:focus {
+  border: solid teal;
+  outline: none;
+}
+
+.addBtn {
+  margin-left: 10px;
+  width: 100px;
+  background-color: teal;
+  border-style: none;
+  border-radius: 10px;
+}
+
+.addBtn:hover {
+  cursor: pointer;
+}
+
+.column {
+  display: flex;
+  justify-content: center;
+}
